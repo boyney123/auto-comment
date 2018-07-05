@@ -1,0 +1,40 @@
+{
+  "name": "auto-comment",
+  "version": "1.0.0",
+  "description": "Auto comment on issues and pull requests",
+  "author": "David Boyne <davidboyne123@hotmail.co.uk>",
+  "license": "ISC",
+  "repository": "https://github.com/boyney123/auto-comment.git",
+  "homepage": "https://github.com/boyney123/auto-comment",
+  "bugs": "https://github.com/boyney123/auto-comment/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY_BASE64 | base64 -d) npm start",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage"
+  },
+  "dependencies": {
+    "probot": "^7.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}
