@@ -6,6 +6,9 @@
   </p>
 </p>
 
+![todo](./example.png)
+
+
 ## Usage
 
 Using **auto-comment** is simple. Once you've installed it in your repository you will need to setup your `./github/auto-comment.yml` file and **auto-comment** will do the rest.
@@ -28,3 +31,7 @@ issueOpened: >
 | Name | Type | Description | Example of Usage |
 |------|------|-------------|------------------|
 | issueOpened | `string` | This will be the message when new issues are created. | Auto comments on new issues are a great way to give feedback to users or a way of telling users to make sure they provide as much context as possible. |
+
+
+
+
