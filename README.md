@@ -6,4 +6,25 @@
   </p>
 </p>
 
+## Usage
 
+Using **auto-comment** is simple. Once you've installed it in your repository you will need to setup your `./github/auto-comment.yml` file and **auto-comment** will do the rest.
+
+## Configuring for your project
+
+There are a couple of configuration options that you will need to setup depending on what you want.
+
+```yml
+# Comment to a new issue.
+issueOpened: >
+  Thank your for raising a issue. We will try and get back to you as soon as possible. 
+  
+  Please make sure you have given us as much context as possible.
+
+```
+
+### Available options
+
+| Name | Type | Description | Example of Usage |
+|------|------|-------------|------------------|
+| issueOpened | `string` | This will be the message when new issues are created. | Auto comments on new issues are a great way to give feedback to users or a way of telling users to make sure they provide as much context as possible. |
