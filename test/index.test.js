@@ -1,10 +1,66 @@
-// You can import your modules
-// const index = require('../index')
+// Requiring probot allows us to initialize an application
+const { Application } = require("probot");
+// Requiring our app implementation
+const plugin = require("../");
+// Create a fixtures folder in your test folder
+// Then put any larger testing payloads in there
+const issueOpenedEvent = require("./events/issue-opened");
 
-test('that we can run tests', () => {
-  // your real tests go here
-  expect(1 + 2 + 3).toBe(6)
-})
+describe("your-app", () => {
+  let app;
+  let github;
 
-// For more information about testing with Jest see:
-// https://facebook.github.io/jest/
+  beforeEach(() => {
+    app = new Application();
+
+    github = {
+      repos: {
+        getContent: () =>
+          Promise.resolve({
+            data: {
+              content: Buffer.from(`issueOpened:\n  My Message`).toString("base64")
+            }
+          })
+      },
+      issues: {
+        createComment: jest.fn()
+      }
+    };
+
+    app.auth = () => Promise.resolve(github);
+    app.load(plugin);
+  });
+
+  describe("issues.opened", () => {
+    it("Reads `issuedOpened` from the `auto-comment.yml` and sends the value to github", async () => {
+      await app.receive({ event: "issues", payload: issueOpenedEvent });
+
+      expect(github.issues.createComment).toHaveBeenCalledWith({
+        body: "My Message",
+        number: 19,
+        owner: "boyney123",
+        repo: undefined
+      });
+    });
+
+    it("does not create a new comment if the `issuedOpened` cannot be found in the config", async () => {
+      await app.receive({ event: "issues", payload: issueOpenedEvent });
+
+      github = {
+        repos: {
+          getContent: () =>
+            Promise.resolve({
+              data: {
+                content: Buffer.from(`pullRequestOpened:\n  My Message`).toString("base64")
+              }
+            })
+        },
+        issues: {
+          createComment: jest.fn()
+        }
+      };
+
+      expect(github.issues.createComment).not.toHaveBeenCalled();
+    });
+  });
+});

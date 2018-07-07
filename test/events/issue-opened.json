@@ -1,0 +1,17 @@
+{
+  "action": "opened",
+  "issue": {
+    "number": 19,
+    "title": "New Issue",
+    "user": {
+      "login": "boyney123"
+    },
+    "labels": [],
+    "state": "open"
+  },
+  "repository": {
+    "owner": {
+      "login": "boyney123"
+    }
+  }
+}
