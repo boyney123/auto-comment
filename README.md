@@ -2,6 +2,7 @@
   <img src="https://avatars3.githubusercontent.com/in/14394?s=88&amp;v=4" width="64">
   <h3 align="center"><a href="https://boyney123.github.io/auto-comment/">auto-comment</a></h3>
   <p align="center">A GitHub App built with <a href="https://github.com/probot/probot">Probot</a> that comments on new issues and pull requests based on your configuration.<p>
+  <p align="center"><a href="https://travis-ci.org/boyney123/auto-comment"><img src="https://img.shields.io/travis/boyney123/auto-comment/master.svg" alt="Build Status"></a>
  
   </p>
 </p>
