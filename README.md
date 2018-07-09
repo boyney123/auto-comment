@@ -11,7 +11,6 @@
 
 ![todo](./example.png)
 
-
 ## Usage
 
 Using **auto-comment** is simple. Once you've installed it in your repository you will need to setup your `./github/auto-comment.yml` file and **auto-comment** will do the rest.
@@ -23,18 +22,19 @@ There are a couple of configuration options that you will need to setup dependin
 ```yml
 # Comment to a new issue.
 issueOpened: >
-  Thank your for raising a issue. We will try and get back to you as soon as possible. 
-  
+  Thank your for raising a issue. We will try and get back to you as soon as possible.
+
   Please make sure you have given us as much context as possible.
 
+pullRequestOpened: >
+  Thank your for raising your pull request.
+
+  Please make sure you have followed our contributing guidelines. We will review it as soon as possible
 ```
 
 ### Available options
 
-| Name | Type | Description | Example of Usage |
-|------|------|-------------|------------------|
-| issueOpened | `string` | This will be the message when new issues are created. | Auto comments on new issues are a great way to give feedback to users or a way of telling users to make sure they provide as much context as possible. |
-
-
-
-
+| Name              | Type     | Description                                                  | Example of Usage                                                                                                                                       |
+| ----------------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| issueOpened       | `string` | This will be the message when new issues are created.        | Auto comments on new issues are a great way to give feedback to users or a way of telling users to make sure they provide as much context as possible. |
+| pullRequestOpened | `string` | This will be the message when new pull requests are created. | Thank people for creating pull requests, give them links to your contributing guideline.                                                               |

@@ -1,0 +1,17 @@
+{
+  "action": "opened",
+  "pull_request": {
+    "number": 19,
+    "title": "New Pull Request",
+    "user": {
+      "login": "boyney123"
+    },
+    "labels": [],
+    "state": "open"
+  },
+  "repository": {
+    "owner": {
+      "login": "boyney123"
+    }
+  }
+}
