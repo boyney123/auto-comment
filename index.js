@@ -15,7 +15,9 @@ module.exports = app => {
 
     const params = context.issue({ body: pullRequestOpened });
 
+    console.log(params);
+
     // Post a comment on the issue
-    return context.github.pullRequests.createComment(params);
+    return context.github.issues.createComment(params);
   });
 };

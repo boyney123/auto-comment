@@ -33,9 +33,6 @@ describe("your-app", () => {
       },
       issues: {
         createComment: jest.fn()
-      },
-      pullRequests: {
-        createComment: jest.fn()
       }
     };
 
@@ -80,7 +77,7 @@ describe("your-app", () => {
     it("Reads `pullRequestOpened` from the `auto-comment.yml` and sends the value to github", async () => {
       await app.receive({ event: "pull_request", payload: pullRequestOpenedEvent });
 
-      expect(github.pullRequests.createComment).toHaveBeenCalledWith({
+      expect(github.issues.createComment).toHaveBeenCalledWith({
         body: "My Message",
         number: 19,
         owner: "boyney123",
@@ -102,13 +99,10 @@ describe("your-app", () => {
         },
         issues: {
           createComment: jest.fn()
-        },
-        pullRequests: {
-          createComment: jest.fn()
         }
       };
 
-      expect(github.pullRequests.createComment).not.toHaveBeenCalled();
+      expect(github.issues.createComment).not.toHaveBeenCalled();
     });
   });
 });
