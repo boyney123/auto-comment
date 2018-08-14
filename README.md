@@ -13,7 +13,7 @@
 
 ## Usage
 
-Using **auto-comment** is simple. Once you've installed it in your repository you will need to setup your `./github/auto-comment.yml` file and **auto-comment** will do the rest.
+Using **auto-comment** is simple. Once you've installed it in your repository you will need to setup your `.github/auto-comment.yml` file and **auto-comment** will do the rest.
 
 ## Configuring for your project
 
