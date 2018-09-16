@@ -37,5 +37,9 @@
     "env": [
       "jest"
     ]
+  },
+  "jest": {
+    "verbose": false,
+    "testURL": "http://localhost/"
   }
 }
