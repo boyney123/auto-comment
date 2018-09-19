@@ -47,8 +47,6 @@ module.exports = app => {
           // Post a comment on the issue
           return context.github.issues.createComment(params);
         }
-
-        return false;
       });
     });
   });
