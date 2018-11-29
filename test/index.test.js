@@ -26,7 +26,7 @@ describe("your-app", () => {
 
     github = {
       repos: {
-        getContent: () =>
+        getContents: () =>
           Promise.resolve({
             data: config
           })
@@ -42,7 +42,7 @@ describe("your-app", () => {
 
   describe("issues.opened", () => {
     it("Reads `issuedOpened` from the `auto-comment.yml` and sends the value to github", async () => {
-      await app.receive({ event: "issues", payload: issueOpenedEvent });
+      await app.receive({ name: "issues", payload: issueOpenedEvent });
 
       expect(github.issues.createComment).toHaveBeenCalledWith({
         body: "My Message",
@@ -53,14 +53,16 @@ describe("your-app", () => {
     });
 
     it("does not create a new comment if the `issuedOpened` cannot be found in the config", async () => {
-      await app.receive({ event: "issues", payload: issueOpenedEvent });
+      await app.receive({ name: "issues", payload: issueOpenedEvent });
 
       github = {
         repos: {
           getContent: () =>
             Promise.resolve({
               data: {
-                content: Buffer.from(`pullRequestOpened:\n  My Message`).toString("base64")
+                content: Buffer.from(
+                  `pullRequestOpened:\n  My Message`
+                ).toString("base64")
               }
             })
         },
@@ -75,7 +77,10 @@ describe("your-app", () => {
 
   describe("pullRequests.opened", () => {
     it("Reads `pullRequestOpened` from the `auto-comment.yml` and sends the value to github", async () => {
-      await app.receive({ event: "pull_request", payload: pullRequestOpenedEvent });
+      await app.receive({
+        name: "pull_request",
+        payload: pullRequestOpenedEvent
+      });
 
       expect(github.issues.createComment).toHaveBeenCalledWith({
         body: "My Message",
@@ -86,14 +91,19 @@ describe("your-app", () => {
     });
 
     it("does not create a new comment if the `pullRequestOpened` cannot be found in the config", async () => {
-      await app.receive({ event: "pull_request", payload: pullRequestOpenedEvent });
+      await app.receive({
+        name: "pull_request",
+        payload: pullRequestOpenedEvent
+      });
 
       github = {
         repos: {
           getContent: () =>
             Promise.resolve({
               data: {
-                content: Buffer.from(`issueOpened:\n  My Message`).toString("base64")
+                content: Buffer.from(`issueOpened:\n  My Message`).toString(
+                  "base64"
+                )
               }
             })
         },
