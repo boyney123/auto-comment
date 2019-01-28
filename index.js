@@ -1,28 +1,6 @@
 const eventTypes = {
-  issue: [
-    "assigned",
-    "unassigned",
-    "labeled",
-    "unlabeled",
-    "opened",
-    "edited",
-    "milestoned",
-    "demilestoned",
-    "closed",
-    "reopened"
-  ],
-  pull_request: [
-    "assigned",
-    "unassigned",
-    "review_requested",
-    "review_request_removed",
-    "labeled",
-    "unlabeled",
-    "opened",
-    "edited",
-    "closed",
-    "reopened"
-  ]
+  issues: ["assigned", "unassigned", "labeled", "unlabeled", "opened", "edited", "milestoned", "demilestoned", "closed", "reopened"],
+  pull_request: ["assigned", "unassigned", "review_requested", "review_request_removed", "labeled", "unlabeled", "opened", "edited", "closed", "reopened"]
 };
 
 function toCamelCase(input) {
@@ -41,6 +19,7 @@ module.exports = app => {
         const config = await context.config(`auto-comment.yml`);
         const templateKey = toCamelCase(eventName);
         const templateData = config[templateKey];
+
         if (templateData) {
           const params = context.issue({ body: templateData });
 

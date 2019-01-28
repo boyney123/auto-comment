@@ -32,9 +32,34 @@ pullRequestOpened: >
   Please make sure you have followed our contributing guidelines. We will review it as soon as possible.
 ```
 
-### Available options
+### Available options for Issues
 
-| Name              | Type     | Description                                                  | Example of Usage                                                                                                                                       |
-| ----------------- | -------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| issueOpened       | `string` | This will be the message when new issues are created.        | Auto comments on new issues are a great way to give feedback to users or a way of telling users to make sure they provide as much context as possible. |
-| pullRequestOpened | `string` | This will be the message when new pull requests are created. | Thank people for creating pull requests, give them links to your contributing guideline.                                                               |
+| Name               | Description                                    |
+| ------------------ | ---------------------------------------------- |
+| issuesOpened       | Message when issues are created.               |
+| issuesClosed       | Message when be shown when the issue is closed |
+| issuesLabeled      | Message when issues are labeled                |
+| issuesUnlabeled    | Message when issues are unlabeled              |
+| issuesEdited       | Message when issues are edited                 |
+| issuesMilestoned   | Message when issues have been milestoned       |
+| issuesDemilestoned | Message when issues have been demilestoned     |
+| issuesClosed       | Message when issues are closed                 |
+| issuesReopened     | Message when issues are reopened               |
+| issuesAssigned     | Message when issues are assigned               |
+| issuesUnassigned   | Message when issues are unassigned             |
+
+### Available options for Pull Requests
+
+| Name                            | Description                                                    |
+| ------------------------------- | -------------------------------------------------------------- |
+| pullRequestOpened               | Message when pull requests are opened .                        |
+| pullRequestClosed               | Message when be shown when the issue is closed                 |
+| pullRequestReviewRequested      | Message when be shown when a reviewer has been requested       |
+| pullRequestReviewRequestRemoved | Message when be shown when a reviewer request has been removed |
+| pullRequestLabeled              | Message when pullRequest are labeled                           |
+| pullRequestUnlabeled            | Message when pullRequest are unlabeled                         |
+| pullRequestEdited               | Message when pullRequest are edited                            |
+| pullRequestClosed               | Message when pullRequest are closed                            |
+| pullRequestReopened             | Message when pullRequest are reopened                          |
+| pullRequestsAssigned            | Message when pullRequests are assigned                         |
+| pullRequestsUnassigned          | Message when pullRequests are unassigned                       |
