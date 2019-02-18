@@ -21,7 +21,7 @@ There are a couple of configuration options that you will need to setup dependin
 
 ```yml
 # Comment to a new issue.
-issueOpened: >
+issuesOpened: >
   Thank you for raising an issue. We will try and get back to you as soon as possible.
 
   Please make sure you have given us as much context as possible.
@@ -61,5 +61,5 @@ pullRequestOpened: >
 | pullRequestEdited               | Message when pullRequest are edited                            |
 | pullRequestClosed               | Message when pullRequest are closed                            |
 | pullRequestReopened             | Message when pullRequest are reopened                          |
-| pullRequestsAssigned            | Message when pullRequests are assigned                         |
-| pullRequestsUnassigned          | Message when pullRequests are unassigned                       |
+| pullRequestAssigned            | Message when pullRequests are assigned                         |
+| pullRequestUnassigned          | Message when pullRequests are unassigned                       |
