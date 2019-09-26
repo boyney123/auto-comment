@@ -36,14 +36,13 @@ pullRequestOpened: >
 
 | Name               | Description                                    |
 | ------------------ | ---------------------------------------------- |
-| issuesOpened       | Message when issues are created.               |
-| issuesClosed       | Message when be shown when the issue is closed |
+| issuesOpened       | Message when issues are created                |
+| issuesClosed       | Message when issues are closed                 |
 | issuesLabeled      | Message when issues are labeled                |
 | issuesUnlabeled    | Message when issues are unlabeled              |
 | issuesEdited       | Message when issues are edited                 |
 | issuesMilestoned   | Message when issues have been milestoned       |
 | issuesDemilestoned | Message when issues have been demilestoned     |
-| issuesClosed       | Message when issues are closed                 |
 | issuesReopened     | Message when issues are reopened               |
 | issuesAssigned     | Message when issues are assigned               |
 | issuesUnassigned   | Message when issues are unassigned             |
@@ -52,14 +51,14 @@ pullRequestOpened: >
 
 | Name                            | Description                                                    |
 | ------------------------------- | -------------------------------------------------------------- |
-| pullRequestOpened               | Message when pull requests are opened .                        |
-| pullRequestClosed               | Message when be shown when the issue is closed                 |
-| pullRequestReviewRequested      | Message when be shown when a reviewer has been requested       |
-| pullRequestReviewRequestRemoved | Message when be shown when a reviewer request has been removed |
-| pullRequestLabeled              | Message when pullRequest are labeled                           |
-| pullRequestUnlabeled            | Message when pullRequest are unlabeled                         |
-| pullRequestEdited               | Message when pullRequest are edited                            |
-| pullRequestClosed               | Message when pullRequest are closed                            |
-| pullRequestReopened             | Message when pullRequest are reopened                          |
-| pullRequestAssigned            | Message when pullRequests are assigned                         |
-| pullRequestUnassigned          | Message when pullRequests are unassigned                       |
+| pullRequestOpened               | Message when pull requests are opened                          |
+| pullRequestClosed               | Message when pull requests are closed                          |
+| pullRequestReviewRequested      | Message when review has been requested                         |
+| pullRequestReviewRequestRemoved | Message when review request has been removed                   |
+| pullRequestLabeled              | Message when pull requests are labeled                         |
+| pullRequestUnlabeled            | Message when pull requests are unlabeled                       |
+| pullRequestEdited               | Message when pull requests are edited                          |
+| pullRequestClosed               | Message when pull requests are closed                          |
+| pullRequestReopened             | Message when pull requests are reopened                        |
+| pullRequestAssigned             | Message when pull requests are assigned                        |
+| pullRequestUnassigned           | Message when pull requests are unassigned                      |
